@@ -42,12 +42,15 @@ function respondToQuery(menuData, query) {
 
   for (const [category, items] of Object.entries(menuData)) {
     const lowerCategory = category.toLowerCase();
-    const categoryMatch = lowerCategory.includes(query);
-    
-    const matchedItems = categoryMatch
-      ? items
-      : items.filter(item => item.toLowerCase().includes(query));
 
+    // If query matches a category name, return the full category
+    if (lowerCategory.includes(query)) {
+      results.push(`📂 <b>${category}</b>:<br>– ${items.join("<br>– ")}`);
+      continue;
+    }
+
+    // Otherwise, match individual items in the category
+    const matchedItems = items.filter(item => item.toLowerCase().includes(query));
     if (matchedItems.length > 0) {
       results.push(`📂 <b>${category}</b>:<br>– ${matchedItems.join("<br>– ")}`);
     }
