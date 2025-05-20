@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PIPPS Chatbot</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        #chat-box { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+        #chat { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background: #fafafa; }
+        #user-input { width: 80%; padding: 10px; }
+        button { padding: 10px; }
+    </style>
+</head>
+<body>
+    <div id="chat-box">
+        <h2>PIPPS Menu Chatbot</h2>
+        <div id="chat"></div>
+        <form id="chat-form">
+            <input id="user-input" type="text" placeholder="Ask about menu options..." required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="chatbot.js"></script>
+</body>
+</html>
